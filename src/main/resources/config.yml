@@ -1,0 +1,5 @@
+user: compromised
+pass: fu5ukAtR
+host: localhost
+port: 3306
+dbname: compromised

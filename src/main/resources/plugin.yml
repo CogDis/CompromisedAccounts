@@ -1,0 +1,3 @@
+name: Compromised
+main: com.precipicegames.zeryl.compromised.Compromised
+version: ${version}
