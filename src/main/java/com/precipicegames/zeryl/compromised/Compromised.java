@@ -20,7 +20,7 @@ public class Compromised extends JavaPlugin implements Listener {
 
     private FileConfiguration config;
     protected Connection db;
-    protected String uri; 
+    protected String uri;
     protected String user;
     protected String password;
     protected String dbDriver;
