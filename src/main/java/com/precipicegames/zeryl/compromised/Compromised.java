@@ -30,6 +30,7 @@ public class Compromised extends JavaPlugin implements Listener {
         PluginManager pm = getServer().getPluginManager();
         getServer().getPluginManager().registerEvents(this, this);
         getConfig().options().copyDefaults(true);
+        saveConfig();
         config = getConfig();
         this.uri = "mysql://" + config.getString("host") + ":" + config.getString("port") + "/" + config.getString("dbname");
         this.user = config.getString("user");
@@ -43,15 +44,14 @@ public class Compromised extends JavaPlugin implements Listener {
     @Override
     public void onDisable() {
         PluginDescriptionFile pdf = this.getDescription();
-        System.out.println(pdf.getName() + " is now disabled.");
-        saveConfig();
+        System.out.println(pdf.getName() + " is now disabled.");        
     }
 
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onPlayerPreLogin(PlayerPreLoginEvent event) {
         if (checkName(event.getName())) {
             event.setResult(PlayerPreLoginEvent.Result.KICK_OTHER);
-            event.setKickMessage("Please contact us on the forums, your account has show to be compromised.");
+            event.setKickMessage("Please contact us on the forums, your account has shown to be compromised.");
         }
     }
 
