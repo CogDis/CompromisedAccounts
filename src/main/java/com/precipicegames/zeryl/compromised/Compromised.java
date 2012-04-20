@@ -64,7 +64,7 @@ public class Compromised extends JavaPlugin implements Listener {
             return false;
         }
         try {
-            PreparedStatement check = this.db.prepareStatement("select 1 from players where name = ? and active = 1");
+            PreparedStatement check = this.db.prepareStatement("select 1 from players where name = ? and isactive = 1");
             check.setString(1, name);
             ResultSet rs = check.executeQuery();
             if(rs.next() != false) {
